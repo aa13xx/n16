@@ -27,8 +27,6 @@ m1 92235.60C 0.00559
      14000.60C 0.30987
      8016.60C 0.48991
      1001.60C 0.01384 $Cylinder 1
-C mt1 o2/u.12t $O in UO2 treatment card
-C mt1 u/o2.12t $u238 in UO2 treatment card
 mt1 lwtr.01t $H in H20 treatment card
 C
 C ######################## Define Run Time ###########################
