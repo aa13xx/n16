@@ -1,4 +1,4 @@
-C
+C Okla criticality simulation
 C
 C
 C
@@ -12,20 +12,13 @@ C
 C ######################## Define Surfaces ##########################
 C
 1 RCC 0 0 0 0 0 70 200 $cylinder 1
-5 s 0 0 0 300 $worldsphere
+5 s 0 0 0 500 $worldsphere
 10 py 200 $source surface
 
-mode n p
 C
 C ######################## Define Source #############################
-C 
-C
-C 
 C
 C ######################## Define Tallies ############################
-C
-f14:n 1 $neutrons in cell 1
-e14 0.5e-6 1 5 10
 C
 C ######################## Define Materials ##########################
 C
@@ -40,5 +33,5 @@ mt1 lwtr.01t $H in H20 treatment card
 C
 C ######################## Define Run Time ###########################
 C
-KCODE 10000 1 10 50
+KCODE 10000 1 10 250
 KSRC 0 0 35
