@@ -18,7 +18,7 @@ C
 2 RCC 0 0 0 0 0 70 400 $cylinder 2
 3 RCC 0 0 70 0 0 200 400 $cylinder 3
 4 RCC 0 0 -200 0 0 200 400 $cylinder 4
-5 s 0 0 0 600 $worldsphere
+5 s 0 0 35 600 $worldsphere
 
 C
 C ######################## Material ###########################
@@ -48,5 +48,5 @@ C mt u/o2.11t $UO2 at 400K
 C
 C ######################## KCODE ###########################
 C
-KCODE 10000 1 10 50
+KCODE 10000 1 10 100
 KSRC 0 0 35
