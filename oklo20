@@ -1,0 +1,52 @@
+C Oklo criticality simulation
+C
+C
+C
+C ######################## Cells #############################
+C
+1 1 -2.548 -1 imp:np=1 $Cylinder 1
+2 2 -2.312 -2 1 imp:np=1 $Cylinder 2
+3 3 -2.409 -3 imp:np=1 $Cylinder 3
+4 3 -2.409 -4 imp:np=1 $Cylinder 4
+5 0 5 imp:np=0 $void outside
+6 0 -5 1 2 3 4 imp:np=1 $void inside
+
+C
+C ######################## Surfaces ##########################
+C
+1 RCC 0 0 0 0 0 70 200 $cylinder 1
+2 RCC 0 0 0 0 0 70 400 $cylinder 2
+3 RCC 0 0 70 0 0 200 400 $cylinder 3
+4 RCC 0 0 -200 0 0 200 400 $cylinder 4
+5 s 0 0 0 600 $worldsphere
+
+C
+C ######################## Material ###########################
+C
+m1 92235.60C 0.0038
+     92238.60C 0.1860
+     14000.60C 0.3155
+     8016.60C 0.4827
+     1001.60C 0.0121 $Cylinder 1
+mt1 lwtr.01t
+m2 92235.60C 0.0010
+     92238.60C 0.0512
+     14000.60C 0.3924
+     8016.60C 0.5442
+     1001.60C 0.0111 $Cylinder 2
+mt2 lwtr.01t
+m3 92235.60C 0.0010
+     92238.60C 0.0492
+     14000.60C 0.4043
+     8016.60C 0.5370
+     1001.60C 0.0085 $Cylinder 3,4
+mt3 lwtr.01t
+C missing mt cards due to old MCNP versions
+C mt lwtr.12t $H20 at 400K
+C mt o2/u.11t $UO2 at 400K
+C mt u/o2.11t $UO2 at 400K
+C
+C ######################## KCODE ###########################
+C
+KCODE 10000 1 10 50
+KSRC 0 0 35
