@@ -4,46 +4,26 @@ C
 C
 C ######################## Cells #############################
 C
-1 1 -3.223 -1 imp:np=1 $Cylinder 1
-2 2 -2.324 -2 1 imp:np=1 $Cylinder 2
-3 3 -2.410 -3 imp:np=1 $Cylinder 3
-4 3 -2.410 -4 imp:np=1 $Cylinder 4
+1 1 -9.0484 -1 imp:np=1 $oklo sphere
 5 0 5 imp:np=0 $void outside
-6 0 -5 1 2 3 4 imp:np=1 $void inside
+6 0 -5 1 imp:np=1 $void inside
 
 C
 C ######################## Surfaces ##########################
 C
-1 RCC 0 0 0 0 0 70 300 $cylinder 1
-2 RCC 0 0 0 0 0 70 600 $cylinder 2
-3 RCC 0 0 70 0 0 300 600 $cylinder 3
-4 RCC 0 0 -300 0 0 300 600 $cylinder 4
-5 s 0 0 35 1200 $worldsphere
+*1 so 10 $oklo sphere
+5 so 100 $worldsphere
 
 C
 C ######################## Material ###########################
 C
-m1 92235.60C 0.016
-     92238.60C 0.4343
-     14000.60C 0.1727
-     8016.60C 0.3597
-     1001.60C 0.0127
-     94239.60C 0.0049 $Cylinder 1
+m1 92235.60C 0.0321
+     92238.60C 0.8229
+C 14000.60C 0.0000
+     8016.60C 0.1331
+     1001.60C 0.0023
+     94239.60C 0.0097 $Cylinder 1
 mt1 lwtr.01t
-m2 92235.60C 0.0018
-     92238.60C 0.0502
-     14000.60C 0.3925
-     8016.60C 0.5439
-     1001.60C 0.0110
-     94239.60C 0.0006 $Cylinder 2
-mt2 lwtr.01t
-m3 92235.60C 0.0018
-     92238.60C 0.0484
-     14000.60C 0.4043
-     8016.60C 0.5370
-     1001.60C 0.0085 
-     94239.60C 0.0006 $Cylinder 3,4
-mt3 lwtr.01t
 C missing mt cards due to old MCNP versions
 C mt lwtr.12t $H20 at 400K
 C mt o2/u.11t $UO2 at 400K
@@ -51,5 +31,5 @@ C mt u/o2.11t $UO2 at 400K
 C
 C ######################## KCODE ###########################
 C
-KCODE 10000 1 10 100
-KSRC 0 0 35
+KCODE 10000 1 10 50
+KSRC 0 0 0
